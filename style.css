@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+* {
+    border: none;
+    outline: none;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+.center {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-text {
+    opacity: 0.8;
+    transition: 0.2s opacity ease;
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw, 6rem);
+    font-weight: 700;
+    background: -webkit-linear-gradient(rgb(7, 99, 212), #37c9ed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+    pointer-events: none;
+}
+
+#small-text {
+    opacity: 1;
+    transition: 0.2s opacity ease;
+    font-weight: 300;
+    color: rgb(80, 80, 80);
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    user-select: none;
+    pointer-events: none;
+}
+
+#settings-btn {
+    color: rgb(80, 80, 80);
+    position: absolute;
+    top: 13px;
+    right: 14px;
+    font-size: 1.5rem;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: white;
+}
+
+#settings {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border-radius: 8px;
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.show-settings {
+    animation: slide-in 0.3s;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.hide-settings {
+    animation: slide-out 0.3s;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.hide-settings-2 {
+    pointer-events: none;
+    opacity: 0;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -100%);
+    }
+}   
+
+#dark-overlay {
+    transition-duration: 0.3s;
+    opacity: 0;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.11);
+    pointer-events: none;
+}
+
+#play-btn {
+    position: relative;
+    opacity: 0.9;
+    margin-top: 40px;
+    padding: 10px 50px 10px 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    background: #37c9ed;
+    border-radius: 8px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    user-select: none;
+}
+
+#play-btn:hover {
+    background-color: rgb(7, 99, 212);
+}
+
+#play-btn:active {
+    transform: scale(0.95);
+}
+
+#arrow {
+    position: absolute;
+    margin-left: 12px;
+    top: 15px;
+    animation: arrow 1s ease infinite;
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#party-popper {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: rgb(80, 80, 80);
+    text-decoration: none;
+    user-select: none;
+}
+
+#party-popper img {
+    width: 25px;
+    margin-right: 7px;
+}
+
+#stats {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+
+    transition-duration: 0.3s;
+}
+
+.stat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    user-select: none;
+}
+
+.stat img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.stat div {
+    margin-left: 3px;
+    font-weight: 400;
+}

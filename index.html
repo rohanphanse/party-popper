@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Happy 10th Birthday Arjun!</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="game.js"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/c5b223ec70.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <a href = "/" id = "party-popper">
+        <img src = "/images/party-hat.svg" />
+        Party Popper
+    </a>
+    <i id = "settings-btn" class="fas fa-cog"></i>
+    <div id = "dark-overlay"></div>
+    <div id = "center" class = "center">
+        <div id = "main-text">Happy 10th Birthday Arjun!</div>
+        <div id = "small-text">From Rohan, Mamma, & Dada</div>
+        <div id = "play-btn">
+            Play
+            <i id = "arrow" class="fas fa-angle-right"></i>
+        </div>
+    </div>
+    <div id = "settings" class = "hide-settings-2">
+        
+    </div>
+    <div id = "stats">
+        <div class = "stat">
+            <img src = "/images/star.svg" />
+            Stars: 
+            <div id = "star-tracker">0</div>
+        </div>
+        <div class = "stat">
+            <img src = "/images/heart.svg" />
+            Health: 
+            <div id = "health-tracker">100</div>
+        </div>
+        <div class = "stat">
+            <img src = "/images/sword.svg" />
+            Power: 
+            <div id = "power-tracker">1</div>
+        </div>
+        <div class = "stat">
+            <img src = "/images/rocket.svg" />
+            Speed:
+            <div id = "speed-tracker">1</div>
+        </div>
+    </div>
+    <canvas id = "canvas"></canvas>
+</body>
+
+</html>
